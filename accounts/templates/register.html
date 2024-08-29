@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <style>
+
+        .form-group{
+            color: aliceblue;
+            margin-top: 8px;
+            margin-left: 1%;
+        }
+        .btn-1{
+            margin-left: 19.8%;
+            margin-top: 10px;
+        }
+
+
+    </style>
+
+
+
+    <form method='post'>
+        {% csrf_token %}
+
+        <div class="form-group">
+            {{user_form.username.errors}}
+            <label> Usuário: </label>
+            {{user_form.username}}
+        </div>
+
+        <div class="form-group">
+            {{user_form.password1.errors}}
+            <label> Senha: </label>
+            {{user_form.password1}}
+        </div>
+
+        <div class="form-group">
+            {{user_form.password2.errors}}
+            <label> Confirmar Senha: </label>
+            {{user_form.password2}}
+        </div>
+
+        <div class="btn-1">
+            <input type="submit" value="Cadastrar">
+        </div>
+
+
+    </form>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <style>
+
+
+    .form-table{
+        color: aliceblue;
+        margin-top: 8px;
+        margin-left: 1%;
+    }
+    .btn-1{
+        margin-left: 17%;
+        margin-top: 10px;
+    }
+
+    </style>
+
+
+
+<form method="post" class="form-class">
+    {% csrf_token %}
+
+    <table class="form-table">
+        {{login_form.as_table}}
+    </table>
+
+    <div class="btn-1">
+    <input type="submit" value="Entrar" class="btn-entrar">
+    </div>
+
+</form>
+{% endblock %}
